@@ -133,6 +133,7 @@ new_project_name/----+
                      +--- manage.py
 ```
 You can follow the tutorial on the django documentation site `My very first project`
+https://docs.djangoproject.com/en/4.2/
 
 ----
 
