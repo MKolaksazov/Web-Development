@@ -132,6 +132,8 @@ Structure of the project and app(s):
                      |
                      +--- manage.py
 ```
+You can follow the tutorial on the django documentation site `My very first project`
+
 ----
 
 # IV) How to install the LAMP stack under Linux 
