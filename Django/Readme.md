@@ -1,4 +1,5 @@
-#This is a excercise project about the web framework with the language Python, 'Django'.
+## This is a excercise project about the web framework with the language Python, 'Django'.
+-----
 
 Here, you will find help information and sample code about:
 
