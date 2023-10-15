@@ -75,7 +75,7 @@ http://localhost/joomla
 
 Installation
 
-http://localhost/joomla/administrator (the control panel)
+Go to: http://localhost/joomla/administrator (the control panel)
 
 ----
 
@@ -133,7 +133,7 @@ new_project_name/----+
                      +--- manage.py
 ```
 You can follow the tutorial on the django documentation site `My very first project`
-https://docs.djangoproject.com/en/4.2/
+Go to: https://docs.djangoproject.com/en/4.2/
 
 ----
 
