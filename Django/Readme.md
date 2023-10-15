@@ -112,16 +112,16 @@ test: http://localhost:8000 (or http://127.0.0.1:8000)
 
 Structure of the project and app(s):
 ```
-/new_project_name----+
-                     +---/new_project_name---+
+new_project_name/----+
+                     +--- new_project_name/--+
                      |                       +--- __init__.py
                      |                       +--- settings.py
                      |                       +--- urls.py
                      |                       +--- wsgi.py
-                     +---/new_app_name---+
-                     |                   +---/static
-                     |                   +---/templates
-                     |                   +---/migrations
+                     +--- new_app_name/--+
+                     |                   +--- static/
+                     |                   +--- templates/
+                     |                   +--- migrations/
                      |                   |
                      |                   +--- admin.py 
                      |                   +--- apps.py
@@ -166,6 +166,51 @@ DATABASES = {
 the OPTIONS parameter gives the correct directory to the my.cnf file (because it was not explicitly named!)
 
 Also, you should make a database with the same name inside the 'phpMyAdmin' control panel (at 127.0.0.1/dashboard)
+
+## 2) 
+
+Inside the same settings.py file you should insert the new app every time a new app is created:
+
+```
+INSTALLED_APPS = [
+   'django.contrib.admin',
+...
+...
+...
+
+   'new_app_name.apps.New_app_nameConfig',
+]
+```
+The new line, that should be added have to include the name of the new app, 'dot' apps 'dot' and again the name with capital first letter and Config appended to the name immediately afterwards.
+
+----
+
+# V) Make migrations 
+(migrations are made every time a change has been performed in the models.py file in order to implement those changes into the SQL database)
+
+## 1)
+
+```$ python3 manage.py migrate```
+
+It should perform an output:
+
+"Applying ***.0001 ...OK" or something like this
+
+## 2) For the implementation of the models inside the SQL:
+
+```$ python3 manage.py makemigrations new_app_name```
+
+The output should contain a number at the end, such as 0001
+
+```$ python3 manage.py sqlmigrate new_app_name 0001```
+
+Finally:
+
+```$ python3 manage.py migrate```
+
+## 3) Creating a superuser
+
+```$ python3 manage.py createsuperuser```
 
 ----
 
