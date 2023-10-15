@@ -102,7 +102,7 @@ $ python3
 
 ```$ django-admin startproject new_project_name```
 
-```$ python3 manage.py runserver```
+```$ python3 manage.py runserver``` or ```$ python3 manage.py runserver 8001``` (if you want to be on a different port e.g. 8001)
 
 test: http://localhost:8000 (or http://127.0.0.1:8000)
 
