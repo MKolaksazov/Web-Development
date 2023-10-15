@@ -87,7 +87,8 @@ http://localhost/joomla/administrator (the control panel)
 
 Test
 
-```$ python3
+```
+$ python3
 >>> import django
 >>> print(django.get.version())
 
@@ -110,7 +111,7 @@ test: http://localhost:8000 (or http://127.0.0.1:8000)
 ```$ django-admin startapp new_app_name```
 
 Structure of the project and app(s):
-
+```
 /new_project_name----+
                      +---/new_project_name---+
                      |                       +--- __init__.py
@@ -129,7 +130,9 @@ Structure of the project and app(s):
                      |                   +--- urls.py 
                      |                   +--- views.py
                      |
-                     L manage.py
+                     +--- manage.py
+```
 ----
 
-# IV) How to install the LAMP stack under Linux (not recommended)
+# IV) How to install the LAMP stack under Linux 
+(not recommended)
