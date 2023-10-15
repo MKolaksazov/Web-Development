@@ -136,5 +136,38 @@ You can follow the tutorial on the django documentation site `My very first proj
 
 ----
 
+# IV) Connecting Django to mySQL
+
+## 1) Connecting Django to mySQL
+
+Inside the directory of the project with the same name there is other directory and indside the fire settings.py
+
+```/new_project_name/new_project_name/settings.py```
+
+Inside this file the DATABASES parameters should be changed to the mySQL parameters: 
+
+```
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.mysql',
+        'NAME': 'database_name',
+        'USER': 'username',
+        'PASSWORD': password
+        'HOST': 'localhost',
+        'PORT': '3306',
+        # navigate to the correct directory
+        'OPTIONS': {
+            'read_default_file': '/opt/lampp/etc/my.cnf',
+        },
+    }
+}
+```
+
+the OPTIONS parameter gives the correct directory to the my.cnf file (because it was not explicitly named!)
+
+Also, you should make a database with the same name inside the 'phpMyAdmin' control panel (at 127.0.0.1/dashboard)
+
+----
+
 # IV) How to install the LAMP stack under Linux 
 (not recommended)
