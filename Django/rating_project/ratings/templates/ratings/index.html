@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Object Ratings</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+<body>
+    <h1>Objects</h1>
+    <ul>
+        {% for object in objects %}
+            <li>{{ object.name }} - Average Rating: <span id="avg_rating_{{ object.id }}"></span>
+                <button class="rate-button" data-id="{{ object.id }}" data-value="plus">+</button>
+                <button class="rate-button" data-id="{{ object.id }}" data-value="minus">-</button>
+            </li>
+        {% endfor %}
+    </ul>
+    <h2>Add Object</h2>
+    <form method="post" action="{% url 'add_object' %}">
+        {% csrf_token %}
+        <label for="name">Name:</label>
+        <input type="text" name="name" id="name">
+        <input type="submit" value="Add Object">
+    </form>
+
+    <script>
+        $(document).ready(function () {
+            $('.rate-button').click(function () {
+                var object_id = $(this).data('id');
+                var rating_value = $(this).data('value');
+                $.post("{% url 'rate_object' 0 %}".replace('0', object_id), { rating: rating_value }, function (data) {
+                    updateAverageRating(object_id);
+                });
+            });
+
+            function updateAverageRating(object_id) {
+                $.get("{% url 'average_rating' 0 %}".replace('0', object_id), function (data) {
+                    $('#avg_rating_' + object_id).text(data.average_rating);
+                });
+            }
+
+            $('.rate-button').each(function() {
+                var object_id = $(this).data('id');
+                updateAverageRating(object_id);
+            });
+        });
+    </script>
+</body>
+</html>
