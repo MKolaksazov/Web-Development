@@ -1,5 +1,8 @@
-sudo cd /
+
 sudo git add --all
+
+marko1985
+
 sudo git commit -m "Initial commit"
 sudo git pull --rebase origin master
 sudo git push -u origin master
