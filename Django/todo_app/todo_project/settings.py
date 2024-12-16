@@ -25,7 +25,7 @@ SECRET_KEY = 'django-insecure-#f$-x5$*^&lqoc4j&gzk_%6fbr5migbfp^z_gtlpp7pgls(q^w
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['.vercel.app']
+ALLOWED_HOSTS = ['.vercel.app', 'localhost', '127.0.0.1', '100.71.136.40']
 
 
 # Application definition
@@ -73,7 +73,6 @@ WSGI_APPLICATION = 'todo_project.wsgi.application'
 
 # Database
 # https://docs.djangoproject.com/en/5.1/ref/settings/#databases
-
 """
 DATABASES = {
     'default': {
@@ -85,7 +84,7 @@ DATABASES = {
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'todo_app',
+        'NAME': 'todo_app_db',
         'USER': 'root',
         'PASSWORD': '',
         'HOST': '100.71.136.40',
